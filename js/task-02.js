@@ -9,13 +9,15 @@ const ingredients = [
 
 const refs = {
   listIngredients: document.querySelector("#ingredients"),
+  arrList: [],
 
   insertIngredient(ingredients) {
     ingredients.forEach((ingredient) => {
       const itemsIngredients = document.createElement("li");
       itemsIngredients.textContent = ingredient;
-      this.listIngredients.append(itemsIngredients);
+      this.arrList.push(itemsIngredients);
     });
+    this.listIngredients.append(...this.arrList);
   },
 };
 
