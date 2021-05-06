@@ -9,12 +9,12 @@ const ingredients = [
 
 const refs = {
   listIngredients: document.querySelector("#ingredients"),
-  itemsIngredients: document.createElement("li"),
 
-  insertIngredient(ingredient) {
-    const item = this.itemsIngredients;
-    ingredient.forEach((ingredient) => {
-      this.listIngredients.prepend(item.appendChild(ingredient));
+  insertIngredient(ingredients) {
+    ingredients.forEach((ingredient) => {
+      const itemsIngredients = document.createElement("li");
+      itemsIngredients.textContent = ingredient;
+      this.listIngredients.append(itemsIngredients);
     });
   },
 };
