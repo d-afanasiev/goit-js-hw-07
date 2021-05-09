@@ -20,11 +20,13 @@ const refs = {
   listGallery: document.querySelector("#gallery"),
   arrList: [],
 
+  createList({ url, alt }) {
+    return `<li><img src="${url}" alt="${alt}" width=320></li>`;
+  },
+
   insertIngredient(images) {
-    images.forEach((image) => {
-      this.arrList.push(
-        `<li><img src="${image.url}" alt="${image.alt}" width=320></li>`
-      );
+    images.map((image) => {
+      this.arrList.push(this.createList(image));
     });
     this.listGallery.insertAdjacentHTML(
       "afterbegin",
