@@ -2,7 +2,7 @@ const refs = {
   inputValidation: document.querySelector("#validation-input"),
 };
 
-refs.inputValidation.addEventListener("change", () => {
+refs.inputValidation.addEventListener("blur", () => {
   if (refs.inputValidation.value.length > refs.inputValidation.dataset.length) {
     refs.inputValidation.classList.add("valid");
     refs.inputValidation.classList.remove("invalid");
