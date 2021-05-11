@@ -1,15 +1,14 @@
-const ingredients = [
-  "Картошка",
-  "Грибы",
-  "Чеснок",
-  "Помидоры",
-  "Зелень",
-  "Приправы",
-];
-
 const refs = {
   listIngredients: document.querySelector("#ingredients"),
   arrList: [],
+  ingredients: [
+    "Картошка",
+    "Грибы",
+    "Чеснок",
+    "Помидоры",
+    "Зелень",
+    "Приправы",
+  ],
 
   insertIngredient(ingredients) {
     ingredients.map((ingredient) => {
@@ -21,4 +20,4 @@ const refs = {
   },
 };
 
-refs.insertIngredient(ingredients);
+refs.insertIngredient(refs.ingredients);
