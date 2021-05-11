@@ -3,6 +3,7 @@ const refs = {
   containerBoxes: document.querySelector("#boxes"),
   widthBox: 30,
   heightBox: 30,
+  marginBox: 5,
 
   getRandomColor(min, max) {
     return Math.random() * (max - min) + min;
@@ -14,7 +15,7 @@ const refs = {
       const boxColor = document.createElement("div");
       boxColor.style.width = `${this.widthBox}px`;
       boxColor.style.height = `${this.heightBox}px`;
-      boxColor.style.margin = "5px";
+      boxColor.style.margin = `${this.marginBox}px`;
       boxColor.style.backgroundColor = `rgb(${this.getRandomColor(
         0,
         255
