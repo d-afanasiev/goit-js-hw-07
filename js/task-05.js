@@ -4,8 +4,8 @@ const refs = {
 };
 
 refs.inputName.addEventListener("input", () => {
-  if (refs.inputName.value === "") {
+  if (refs.inputName.value.trim() === "") {
     return (refs.textChange.textContent = "незнакомец");
   }
-  refs.textChange.textContent = refs.inputName.value;
+  refs.textChange.textContent = refs.inputName.value.trim();
 });

@@ -3,7 +3,10 @@ const refs = {
 };
 
 refs.inputValidation.addEventListener("blur", () => {
-  if (refs.inputValidation.value.length > refs.inputValidation.dataset.length) {
+  if (
+    refs.inputValidation.value.length ===
+    parseInt(refs.inputValidation.dataset.length, 10)
+  ) {
     refs.inputValidation.classList.add("valid");
     refs.inputValidation.classList.remove("invalid");
   } else {
