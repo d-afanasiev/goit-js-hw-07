@@ -10,6 +10,7 @@ const refs = {
   },
 
   createBoxes(amount) {
+    this.destroyBoxes();
     const arrContent = [];
     for (let i = 0; i < amount; i++) {
       const boxColor = document.createElement("div");
@@ -31,8 +32,10 @@ const refs = {
     this.containerBoxes.innerHTML = "";
     this.widthBox = 30;
     this.heightBox = 30;
-    this.containerControls.firstElementChild.value = "";
   },
+  clearInput() {
+    this.containerControls.firstElementChild.value = "";
+  }
 };
 
 refs.containerControls.addEventListener("click", (event) => {
@@ -40,5 +43,6 @@ refs.containerControls.addEventListener("click", (event) => {
     refs.createBoxes(refs.containerControls.firstElementChild.value);
   } else if (event.target.dataset.action === "destroy") {
     refs.destroyBoxes();
+    refs.clearInput();
   }
 });
